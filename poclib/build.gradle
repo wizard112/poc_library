@@ -2,6 +2,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
+//YOUR LIBRARY VERSION
+version = "2.0.0"
+
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
@@ -10,7 +13,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
-        versionName "1.0"
+        versionName "2.0.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -32,37 +35,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-/*
-ext {
-    bintrayRepo = 'ad_library' //le nom de votre repo maven créé dans bintray
-    bintrayName = 'TestLib' //le nom que vous souhaitez donner à votre projet sur bintray
-    orgName = 'gaeltshilombo' //votre nom d'utilisateur
-
-    publishedGroupId = 'com.gaeltshilombo.poc' //aaaa : le nom de groupe de la librarie
-    artifact = 'testLib' //BBBB : le nom de la librairie
-    libraryVersion = "1.0.0" //la version de la librairie
-
-    //la librairie sera donc : aaaa:BBBB:version
-
-    libraryName = 'TestLib'
-    libraryDescription = 'Test my new library for futur project'
-
-    siteUrl = 'https://github.com/wizard112/poc_library'
-    gitUrl = 'https://github.com/wizard112/poc_library.git'
-
-    developerId = 'gaeltshilombo'
-    developerName = 'Gael wanticale'
-    developerEmail = 'gaeltshilombo@gmail.com'
-
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
-}
-
-
-apply from: rootProject.file('gradle/install-v1.gradle')
-apply from: rootProject.file('gradle/bintray-android-v1.gradle')
-*/
+// This is the library version used when deploying the artifact
 
 def siteUrl = 'https://github.com/wizard112/poc_library'      // Homepage URL of the library
 def gitUrl = 'https://github.com/wizard112/poc_library'   // Git repository URL
@@ -76,8 +49,8 @@ install {
                 packaging 'aar'
 
                 // Add your description here
-                name 'com.gaeltshilombo.poc:mytestLib' // TODO
-                description = 'test my second project' // TODO
+                name 'com.gaeltshilombo.poc:mytestLib' // //le nom que vous souhaitez donner à votre projet sur bintray
+                description = 'test my second project' // description here
                 url siteUrl
 
                 // Set your license
@@ -133,13 +106,14 @@ bintray {
 
     configurations = ['archives']
     pkg {
-        repo = "ad_library"
+        repo = "ad_library" //le nom de votre repo maven créé dans bintray
         // it is the name that appears in bintray when logged
-        name = "com.gaeltshilombo.poc:mytestLib" // TODO
+        name = "com.gaeltshilombo.poc:mytestLib" //le nom que vous souhaitez donner à votre projet sur bintray
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
         publish = true
+        override = true
         version {
             gpg {
                 sign = true //Determines whether to GPG sign the files. The default is false
