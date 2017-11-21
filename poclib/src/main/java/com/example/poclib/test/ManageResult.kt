@@ -7,7 +7,8 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 
 /**
- * Created by gael on 21.11.17.
+ * This is class is a callback to handle result from permissions and implicit intent
+ * Created by gael 21.11.17.
  */
 
 class ManageResult(cxt : Context, ac : AppCompatActivity) : ListenerCommunication {
@@ -23,7 +24,8 @@ class ManageResult(cxt : Context, ac : AppCompatActivity) : ListenerCommunicatio
         when (requestCode) {
             PermissionConstants.CODE_PERMISSION_CAMERA -> {
                 if(grantResults.size > 0 && grantResults.get(0) == PackageManager.PERMISSION_GRANTED) {
-                    OpenFeature.newIntentCamera(activity)
+                    //OpenFeature.newIntentCamera(activity)
+                    OpenFeature.newIntentCameraWithFile(context,activity)
                 }
             }
         }
