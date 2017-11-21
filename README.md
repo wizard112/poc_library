@@ -16,6 +16,7 @@ You can get a string format for the current date or a specific date
   
 # Code
   
+  There is a class of constants to ask the good permission.
   to ask permission don't forget to add it in manifest before. For example camera
   1. add in Manifest
      <uses-permission android:name="android.permission.CAMERA" />
@@ -23,4 +24,3 @@ You can get a string format for the current date or a specific date
      AskPermissions.checkPermissions(this,PermissionConstants.ASK_PERMISSION_CAMERA)
      
      
-There is a class of constants for the permissions
