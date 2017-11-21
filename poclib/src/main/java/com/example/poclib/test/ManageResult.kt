@@ -32,6 +32,5 @@ class ManageResult(cxt : Context, ac : AppCompatActivity) : ListenerCommunicatio
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        Log.i("Test","here")
     }
 }

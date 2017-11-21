@@ -3,7 +3,8 @@ package com.example.poclib.test
 import android.content.Intent
 
 /**
- * Created by gael on 21.11.17.
+ * This callback allows to manage result from onActivityResult and onRequestPermissionsResult
+ * Created on 21.11.17.
  */
 
 interface ListenerCommunication {

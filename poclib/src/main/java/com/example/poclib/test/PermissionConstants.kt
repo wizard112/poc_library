@@ -1,7 +1,9 @@
 package com.example.poclib.test
 
 /**
- * Created by gael on 21.11.17.
+ * Constants for the permissions
+ * 
+ * Created on 21.11.17.
  */
 
 object PermissionConstants {
