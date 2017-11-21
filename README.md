@@ -20,4 +20,7 @@ You can get a string format for the current date or a specific date
   1. add in Manifest
      <uses-permission android:name="android.permission.CAMERA" />
   2. From activity or Fragment you can call
-     AskPermissions.checkPermissionCamera(this)
+     AskPermissions.checkPermissions(this,PermissionConstants.ASK_PERMISSION_CAMERA)
+     
+     
+There is a class of constants for the permissions
