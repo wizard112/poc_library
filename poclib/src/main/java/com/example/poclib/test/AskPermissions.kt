@@ -25,7 +25,7 @@ object AskPermissions {
         if(ActivityCompat.checkSelfPermission(activity,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.CAMERA),PermissionConstants.CODE_PERMISSION_CAMERA)
         }else{
-            OPenFeature.newIntentCamera(activity)
+            OpenFeature.newIntentCamera(activity)
         }
     }
 }

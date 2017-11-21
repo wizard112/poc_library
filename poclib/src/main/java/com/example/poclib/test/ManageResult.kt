@@ -10,7 +10,7 @@ import android.util.Log
  * Created by gael on 21.11.17.
  */
 
-class ManageResult(cxt : Context, ac : AppCompatActivity) : ICommunication {
+class ManageResult(cxt : Context, ac : AppCompatActivity) : ListenerCommunication {
 
     private lateinit var context : Context
     private lateinit var activity : AppCompatActivity
@@ -23,7 +23,7 @@ class ManageResult(cxt : Context, ac : AppCompatActivity) : ICommunication {
         when (requestCode) {
             PermissionConstants.CODE_PERMISSION_CAMERA -> {
                 if(grantResults.size > 0 && grantResults.get(0) == PackageManager.PERMISSION_GRANTED) {
-                    OPenFeature.newIntentCamera(activity)
+                    OpenFeature.newIntentCamera(activity)
                 }
             }
         }
