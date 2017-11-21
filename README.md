@@ -6,7 +6,7 @@ You can get a string format for the current date or a specific date
 
 # Get started
 
-#cPrerequisites
+# Prerequisites
 /
 
 # Installation
