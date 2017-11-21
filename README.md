@@ -4,17 +4,17 @@ You can ask permissions to get photo
 You can write a file in any storage internal or external
 You can get a string format for the current date or a specific date
 
-Get started
+# Get started
 
-Prerequisites
+#cPrerequisites
 /
 
-Installation
+# Installation
 
   Add in your Gradle
   compile ''
   
-  Code
+# Code
   
   to ask permission don't forget to add it in manifest before. For example camera
   1. add in Manifest
