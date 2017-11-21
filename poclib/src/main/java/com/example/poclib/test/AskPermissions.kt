@@ -7,7 +7,8 @@ import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
 
 /**
- * Created by gael on 21.11.17.
+ * This class allows to manage the permissions
+ * Created on 21.11.17.
  */
 
 object AskPermissions {
@@ -25,7 +26,8 @@ object AskPermissions {
         if(ActivityCompat.checkSelfPermission(activity,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.CAMERA),PermissionConstants.CODE_PERMISSION_CAMERA)
         }else{
-            OpenFeature.newIntentCamera(activity)
+            //OpenFeature.newIntentCamera(activity)
+            OpenFeature.newIntentCameraWithFile(activity,activity)
         }
     }
 }
