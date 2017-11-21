@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PocLIbTest</string>
+
+    <string name="btn_test_camera_permission">Camera permission</string>
 </resources>
