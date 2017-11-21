@@ -2,7 +2,7 @@ package com.example.poclib.test
 
 /**
  * Constants for the permissions
- * 
+ *
  * Created on 21.11.17.
  */
 
