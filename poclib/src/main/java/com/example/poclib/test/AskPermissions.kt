@@ -23,11 +23,20 @@ object AskPermissions {
     }
 
     /**
+     * Generic method to check the permissions
+     */
+    fun checkPermissions(activity: AppCompatActivity,code : Int) {
+        when(code) {
+            PermissionConstants.ASK_PERMISSION_CAMERA -> { checkPermissionCamera(activity)}
+        }
+    }
+
+    /**
      * Check camera permission
      *
      * @param activity
      */
-    fun checkPermissionCamera(activity: AppCompatActivity) {
+    private fun checkPermissionCamera(activity: AppCompatActivity) {
         if(ActivityCompat.checkSelfPermission(activity,Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.CAMERA),PermissionConstants.CODE_PERMISSION_CAMERA)
         }else{
