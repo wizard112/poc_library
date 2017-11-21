@@ -1,15 +1,11 @@
 package com.example.gael.poclibtest
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.example.poclib.test.AskPermissions
 import com.example.poclib.test.ManageResult
-import com.example.poclib.test.OPenFeature
-import com.example.poclib.test.PermissionConstants
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
