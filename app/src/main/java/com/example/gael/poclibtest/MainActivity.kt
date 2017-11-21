@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.poclib.test.AskPermissions
 import com.example.poclib.test.ManageResult
+import com.example.poclib.test.PermissionConstants
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     override fun onClick(v: View?) {
        when(v!!.id) {
            R.id.btn_camera_permission -> {
-               AskPermissions.checkPermissionCamera(this)
+               AskPermissions.checkPermissions(this,PermissionConstants.ASK_PERMISSION_CAMERA)
            }
        }
     }
