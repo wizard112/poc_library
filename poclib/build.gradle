@@ -4,7 +4,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: "com.jfrog.bintray"
 
 //YOUR LIBRARY VERSION
-version = "2.0.3"
+version = "2.0.4"
 
 android {
     compileSdkVersion 26
@@ -14,7 +14,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 26
         versionCode 1
-        versionName "2.0.3"
+        versionName "2.0.4"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
