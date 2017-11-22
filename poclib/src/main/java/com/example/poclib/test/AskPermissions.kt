@@ -28,6 +28,8 @@ object AskPermissions {
     fun checkPermissions(activity: AppCompatActivity,code : Int) {
         when(code) {
             PermissionConstants.ASK_PERMISSION_CAMERA -> { checkPermissionCamera(activity)}
+            PermissionConstants.ASK_PERMISSION_WRITE_FILE -> {
+                checkPermissionWriteFile(activity)}
         }
     }
 
@@ -42,6 +44,19 @@ object AskPermissions {
         }else{
             //OpenFeature.newIntentCamera(activity)
             OpenFeature.newIntentCameraWithFile(activity,activity)
+        }
+    }
+
+    /**
+     * Check write file permission
+     *
+     * @param activity
+     */
+    private fun checkPermissionWriteFile(activity: AppCompatActivity) {
+        if(ActivityCompat.checkSelfPermission(activity,Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),PermissionConstants.CODE_PERMISSION_WRITE_FILE)
+        }else{
+
         }
     }
 }

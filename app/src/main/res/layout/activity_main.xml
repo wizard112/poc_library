@@ -13,4 +13,16 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_test_camera_permission"/>
 
+    <Button
+        android:id="@+id/btn_write_file_permission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_test_write_file_permission"/>
+
+    <Button
+        android:id="@+id/btn_request_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_test_request"/>
+
 </LinearLayout>

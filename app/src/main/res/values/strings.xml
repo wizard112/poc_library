@@ -2,4 +2,7 @@
     <string name="app_name">PocLIbTest</string>
 
     <string name="btn_test_camera_permission">Camera permission</string>
+    <string name="btn_test_write_file_permission">Write file permission</string>
+    <string name="btn_test_request">Request for food</string>
+
 </resources>
