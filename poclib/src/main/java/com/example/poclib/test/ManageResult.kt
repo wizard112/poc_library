@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import io.reactivex.Observable
 
 /**
  * This is class is a callback to handle result from permissions and implicit intent
@@ -27,6 +28,9 @@ class ManageResult(cxt : Context, ac : AppCompatActivity) : ListenerCommunicatio
                     //OpenFeature.newIntentCamera(activity)
                     OpenFeature.newIntentCameraWithFile(context,activity)
                 }
+            }
+            PermissionConstants.CODE_PERMISSION_WRITE_FILE -> {
+                Log.i("Test","write file here ")
             }
         }
     }
