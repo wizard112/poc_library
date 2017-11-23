@@ -1,7 +1,9 @@
 package com.example.poclib.test
 
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.pm.ResolveInfo
 import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
@@ -66,6 +68,30 @@ object OpenFeature {
     fun newIntentEnabledNetwork(context: Context){
         //context.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
         context.startActivity(Intent((android.provider.Settings.ACTION_WIRELESS_SETTINGS)))
+    }
+
+    /**
+     * Launch intent to share my content
+     *
+     * @param context
+     * @param msg the message to share
+     * info : https://stackoverflow.com/questions/34618514/share-text-via-intent-on-facebook-without-using-facebook-sdk
+     */
+    fun newIntentShareContent(context: Context, msg : String = "http://www.google.com") {
+        var intentShare : Intent = Intent(Intent.ACTION_SEND)
+        intentShare.setType("text/plain")
+        intentShare.putExtra(android.content.Intent.EXTRA_TEXT,msg)
+        /*var pm  = context.packageManager
+
+        pm.queryIntentActivities(intentShare,0).forEach { t: ResolveInfo? ->
+            if((t!!.activityInfo.name.contains("facebook"))) {
+                var ac = t.activityInfo
+                var name = ComponentName(ac.applicationInfo.packageName,ac.name)
+
+            }
+        }*/
+
+        context.startActivity(Intent.createChooser(intentShare,"My share"))
     }
 
 }
