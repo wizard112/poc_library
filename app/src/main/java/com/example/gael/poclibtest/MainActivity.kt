@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ListeenrRequest{
         btn_camera_permission.setOnClickListener(this)
         btn_write_file_permission.setOnClickListener(this)
         btn_request_food.setOnClickListener(this)
+
+        MyUtils.getInstance(this)
     }
 
     override fun onClick(v: View?) {
