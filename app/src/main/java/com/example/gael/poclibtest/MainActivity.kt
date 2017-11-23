@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ListeenrRequest{
         btn_camera_permission.setOnClickListener(this)
         btn_write_file_permission.setOnClickListener(this)
         btn_request_food.setOnClickListener(this)
+        btn_check_gps.setOnClickListener(this)
+        btn_check_network.setOnClickListener(this)
 
         MyUtils.getInstance(this)
     }
@@ -36,6 +38,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ListeenrRequest{
                val r = MyUtils.getProducts(this)
                Log.i("Test",r.toString())
            }
+           R.id.btn_check_gps -> { MyUtils.checkLocalisation(this)}
+           R.id.btn_check_network -> { MyUtils.checkLocalisation(this,true)}
        }
     }
 

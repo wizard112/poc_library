@@ -2,4 +2,9 @@
     <string name="app_name">PocLib</string>
 
     <string name="test_widget">SOS</string>
+
+    <string name="enabled_gps">Do you want to enable your localisation ?</string>
+    <string name="enabled_network">Do you want to enable your connection ?</string>
+    <string name="dialog_positive_btn">yes</string>
+    <string name="dialog_negative_btn">non</string>
 </resources>

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Environment
 import android.provider.MediaStore
+import android.provider.Settings
 import android.support.v4.content.FileProvider
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
@@ -47,4 +48,24 @@ object OpenFeature {
         }
         activity.startActivityForResult(takePictureIntent,PermissionConstants.CODE_PERMISSION_CAMERA)
     }
+
+    /**
+     * Launch an implicit intent to open settings' gps
+     *
+     * @param context
+     */
+    fun newIntentEnabledGPS(context: Context){
+        context.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+    }
+
+    /**
+     * Launch an implicit intent to open settings' network
+     *
+     * @param context
+     */
+    fun newIntentEnabledNetwork(context: Context){
+        //context.startActivity(Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+        context.startActivity(Intent((android.provider.Settings.ACTION_WIRELESS_SETTINGS)))
+    }
+
 }
