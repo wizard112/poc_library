@@ -25,4 +25,16 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_test_request"/>
 
+    <Button
+        android:id="@+id/btn_check_gps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_check_gps"/>
+
+    <Button
+        android:id="@+id/btn_check_network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_check_network"/>
+
 </LinearLayout>
