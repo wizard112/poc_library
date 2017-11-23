@@ -37,4 +37,10 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_check_network"/>
 
+    <Button
+        android:id="@+id/btn_share_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_share_message"/>
+
 </LinearLayout>

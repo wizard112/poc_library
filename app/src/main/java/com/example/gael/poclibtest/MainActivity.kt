@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ListeenrRequest{
         btn_request_food.setOnClickListener(this)
         btn_check_gps.setOnClickListener(this)
         btn_check_network.setOnClickListener(this)
+        btn_share_msg.setOnClickListener(this)
 
         MyUtils.getInstance(this)
     }
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener, ListeenrRequest{
            }
            R.id.btn_check_gps -> { MyUtils.checkLocalisation(this)}
            R.id.btn_check_network -> { MyUtils.checkLocalisation(this,true)}
+           R.id.btn_share_msg -> { OpenFeature.newIntentShareContent(this)}
        }
     }
 

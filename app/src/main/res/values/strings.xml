@@ -6,5 +6,6 @@
     <string name="btn_test_request">Request for food</string>
     <string name="btn_check_gps">Localisation is enabled</string>
     <string name="btn_check_network">Network is enabled</string>
+    <string name="btn_share_message">Share message</string>
 
 </resources>
