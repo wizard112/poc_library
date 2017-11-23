@@ -1,6 +1,11 @@
 package com.example.poclib.test
 
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import android.util.Log
+import android.widget.RemoteViews
+import com.example.poclib.R
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Observable
 import io.reactivex.Observer
@@ -56,5 +61,17 @@ object MyUtils {
         myObservable.subscribeOn(Schedulers.newThread())
                 .subscribe(susbscribeResponse)
 
+    }
+
+    fun getInstance(context : Context) {
+        var remoteView  = RemoteViews(context.packageName, R.layout.widget_test)
+
+        remoteView.setOnClickPendingIntent(R.id.id_btn_sos, createPendingIntent(context))
+    }
+
+    private fun createPendingIntent(context : Context) : PendingIntent {
+        var intent = Intent(context,NotificationTest::class.java)
+        var pendingIntent = PendingIntent.getActivity(context,System.currentTimeMillis().toInt(),intent,PendingIntent.FLAG_CANCEL_CURRENT)
+        return pendingIntent
     }
 }
