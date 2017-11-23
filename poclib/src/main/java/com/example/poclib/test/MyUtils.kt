@@ -1,8 +1,11 @@
 package com.example.poclib.test
 
+import android.app.AlertDialog
 import android.app.PendingIntent
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
+import android.location.LocationManager
 import android.util.Log
 import android.widget.RemoteViews
 import com.example.poclib.R
@@ -16,7 +19,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 /**
- * Created by gael on 21.11.17.
+ * Created on 21.11.17.
  */
 object MyUtils {
 
@@ -73,5 +76,59 @@ object MyUtils {
         var intent = Intent(context,NotificationTest::class.java)
         var pendingIntent = PendingIntent.getActivity(context,System.currentTimeMillis().toInt(),intent,PendingIntent.FLAG_CANCEL_CURRENT)
         return pendingIntent
+    }
+
+    /**
+     * This method allows to check if gps or network is enabled
+     *
+     * @param context
+     * @param mustNetwork @Boolean, true = network
+     *                              false = gps, this the default value
+     */
+    fun checkLocalisation(context : Context, mustNetwork : Boolean = false){
+        val locationManager = context.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+
+        if(mustNetwork) {
+            checkNetwork(locationManager,context)
+        }else{
+            checkGPS(locationManager,context)
+        }
+    }
+
+    private fun checkGPS(lm : LocationManager, context: Context) {
+        var gpsEnabled = lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
+        if(!gpsEnabled){
+            var dialogGPS = AlertDialog.Builder(context)
+            dialogGPS.setMessage(context.resources.getString(R.string.enabled_gps))
+            dialogGPS.setPositiveButton(context.resources.getString(R.string.dialog_positive_btn),object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    //OpenFeature.newIntentEnabledFromSettings(context)
+                    OpenFeature.newIntentEnabledGPS(context)
+                }
+            })
+            dialogGPS.setNegativeButton(context.resources.getString(R.string.dialog_negative_btn),object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                }
+            })
+            dialogGPS.show()
+        }
+    }
+
+    private fun checkNetwork(lm : LocationManager, context: Context) {
+        var networkEnabled = lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+        if(!networkEnabled) {
+            var dialogNetwork = AlertDialog.Builder(context)
+            dialogNetwork.setMessage(context.resources.getString(R.string.enabled_network))
+            dialogNetwork.setPositiveButton(context.resources.getString(R.string.dialog_positive_btn),object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                    OpenFeature.newIntentEnabledNetwork(context)
+                }
+            })
+            dialogNetwork.setNegativeButton(context.resources.getString(R.string.dialog_negative_btn),object : DialogInterface.OnClickListener {
+                override fun onClick(dialog: DialogInterface?, which: Int) {
+                }
+            })
+            dialogNetwork.show()
+        }
     }
 }
